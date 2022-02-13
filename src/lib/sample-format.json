@@ -1,0 +1,35 @@
+[
+    {
+        "dishes": [
+            {
+                "amount": 390.55,
+                "name": "Duck"
+            },
+            {
+                "amount": 10.11,
+                "name": "Coke"
+            }
+        ],
+        "name": "Rafi"
+    },
+    {
+        "dishes": [
+            {
+                "amount": 49.5,
+                "name": "Steak"
+            },
+            {
+                "amount": 5,
+                "name": "Water"
+            },
+            {
+                "amount": 15
+            }
+        ],
+        "name": "Yonina"
+    },
+    {
+        "dishes": [],
+        "name": "Todd"
+    }
+]

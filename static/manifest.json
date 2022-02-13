@@ -1,0 +1,23 @@
+{
+    "$schema": "https://json.schemastore.org/web-manifest.json",
+    "background_color": "#ffffff",
+    "description": "",
+    "display": "standalone",
+    "icons": [
+        {
+            "sizes": "192x192",
+            "src": "/android-chrome-192x192.png",
+            "type": "image/png"
+        },
+        {
+            "sizes": "512x512",
+            "src": "/android-chrome-512x512.png",
+            "type": "image/png"
+        }
+    ],
+    "name": "Split the Check (and tip!)",
+    "scope": "http://localhost:3042/",
+    "short_name": "Split the Check",
+    "start_url": "http://localhost:3042/",
+    "theme_color": "#ffffff"
+}
