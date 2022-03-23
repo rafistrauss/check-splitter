@@ -1,29 +1,29 @@
-const timestamp = 1648007102041;
+const timestamp = 1648007511570;
 const build = [
-  "/check-split/_app/start-49f2dc39.js",
-  "/check-split/_app/pages/__layout.svelte-f7df85c0.js",
-  "/check-split/_app/assets/pages/__layout.svelte-a66fd1a1.css",
-  "/check-split/_app/error.svelte-71d509d1.js",
-  "/check-split/_app/pages/index.svelte-c0022953.js",
-  "/check-split/_app/assets/pages/index.svelte-d5c4df9c.css",
-  "/check-split/_app/chunks/vendor-b755ecce.js"
+  "/check-splitter/_app/start-e1471e56.js",
+  "/check-splitter/_app/pages/__layout.svelte-f7df85c0.js",
+  "/check-splitter/_app/assets/pages/__layout.svelte-0d2c5dbb.css",
+  "/check-splitter/_app/error.svelte-71d509d1.js",
+  "/check-splitter/_app/pages/index.svelte-c0022953.js",
+  "/check-splitter/_app/assets/pages/index.svelte-d5c4df9c.css",
+  "/check-splitter/_app/chunks/vendor-b755ecce.js"
 ];
 const files = [
-  "/check-split/PXL_20220211_143502777.jpeg",
-  "/check-split/android-chrome-192x192.png",
-  "/check-split/android-chrome-512x512.png",
-  "/check-split/apple-touch-icon.png",
-  "/check-split/browserconfig.xml",
-  "/check-split/favicon-16x16.png",
-  "/check-split/favicon-32x32.png",
-  "/check-split/favicon.ico",
-  "/check-split/favicon.png",
-  "/check-split/manifest.json",
-  "/check-split/mstile-150x150.png",
-  "/check-split/robots.txt",
-  "/check-split/safari-pinned-tab.svg",
-  "/check-split/svelte-welcome.png",
-  "/check-split/svelte-welcome.webp"
+  "/check-splitter/PXL_20220211_143502777.jpeg",
+  "/check-splitter/android-chrome-192x192.png",
+  "/check-splitter/android-chrome-512x512.png",
+  "/check-splitter/apple-touch-icon.png",
+  "/check-splitter/browserconfig.xml",
+  "/check-splitter/favicon-16x16.png",
+  "/check-splitter/favicon-32x32.png",
+  "/check-splitter/favicon.ico",
+  "/check-splitter/favicon.png",
+  "/check-splitter/manifest.json",
+  "/check-splitter/mstile-150x150.png",
+  "/check-splitter/robots.txt",
+  "/check-splitter/safari-pinned-tab.svg",
+  "/check-splitter/svelte-welcome.png",
+  "/check-splitter/svelte-welcome.webp"
 ];
 const worker = self;
 const FILES = `cache${timestamp}`;
