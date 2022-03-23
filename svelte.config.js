@@ -12,7 +12,7 @@ export default {
 			fallback: null
 		}),
 		paths: {
-			base: dev ? '' : '/check-split'
+			base: dev ? '' : '/check-splitter'
 		}
 	}
 };
