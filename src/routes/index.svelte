@@ -3,11 +3,19 @@
 </script>
 
 <script>
-	// let uid = 0;
-	let uid = 5;
+	let uid = 0;
 
+	/** @type {MyData} */
 	let data = [
-		
+		// {
+		// 	name: "John",
+		// 	dishes: [
+		// 		{
+		// 			amount: 24,
+		// 			uid: uid++,
+		// 		}
+		// 	]
+		// }
 	];
 
 	/**
@@ -26,13 +34,12 @@
 	const addPerson = () => {
 		const name = window.prompt("Enter person's name");
 		if (name) {
-
 			data = data.concat({
 				name,
 				dishes: []
-			})
+			});
 		}
-	}
+	};
 
 	/**
 	 *
@@ -48,8 +55,8 @@
 		data[userIdx].dishes = data[userIdx].dishes;
 	};
 
-	/** @type {MyData} */
 	let tip = 20,
+	tax = 8.875
 		/** @type {Users[]} */
 		users = [];
 
@@ -58,20 +65,37 @@
 			const subTotal = curr.dishes.reduce((acc1, curr1) => {
 				return acc1 + curr1.amount * 100;
 			}, 0);
-			acc.total += subTotal;
+			acc.totalPreTax += subTotal;
 			acc.users[curr.name] = subTotal;
 			return acc;
 		},
-		{ total: 0, users: {} }
+		{ totalPreTax: 0, users: {} }
 	);
-
+	
 	$: users = Object.entries(myObj.users).map((el) => {
 		const [user, amount] = el;
+		const userTaxAmount = ((amount / 100) * tax) / 100;
 		const userTipAmount = ((amount / 100) * tip) / 100;
 		el.push(userTipAmount);
+		el.push(userTaxAmount);
 		return el;
 	});
+
 </script>
+
+	<details open>
+		<summary style="cursor: pointer;">
+			Instructions
+		</summary>
+		<p>
+			This (basic) webapp lets you calculate how much each member of your party should pay, tax & tip included, based on what they ordered.
+		</p>
+		<ul>
+			<li>Add each member of your party</li>
+			<li>Add what dishes each member ordered</li>
+			<li>Choose a tip amount</li>
+		</ul>
+	</details>
 
 <section>
 	<table id="displayTable">
@@ -80,16 +104,18 @@
 				<th>Name</th>
 				<th>Order Cost</th>
 				<th>Tip</th>
+				<th>Tax</th>
 				<th>Total</th>
 			</tr>
 		</thead>
 		<tbody>
-			{#each users as [user, amount, tipAmount]}
+			{#each users as [user, amount, tipAmount, taxAmount]}
 				<tr>
 					<td>{user}</td>
 					<td>${(amount / 100).toFixed(2)}</td>
 					<td>${tipAmount.toFixed(2)}</td>
-					<td>${(tipAmount + (amount / 100)).toFixed(2)}</td>
+					<td>${taxAmount.toFixed(2)}</td>
+					<td>${(tipAmount + taxAmount + amount / 100).toFixed(2)}</td>
 				</tr>
 			{/each}
 		</tbody>
@@ -97,6 +123,9 @@
 </section>
 <div style="margin-block-end: 1em;">
 	Tip: <input type="number" min="0" step="1" bind:value={tip} style="inline-size: 2em;" />%
+</div>
+<div style="margin-block-end: 1em;">
+	Tax: <input type="number" min="0" step="0.01" bind:value={tax} style="inline-size: 4em;" />%
 </div>
 
 <div>
@@ -110,12 +139,18 @@
 		</summary>
 		<div class="dishList">
 			{#if item.dishes.length === 0}
-				 <p>No dishes</p>
+				<p>No dishes</p>
 			{/if}
 			{#each item.dishes as dish (dish.uid)}
-				<input type="text" bind:value={dish.name} placeholder="Unnamed Dish" />
-				<input type="number" bind:value={dish.amount} step="0.01" min="0" />
-				<button on:click={removeDish(item.name, dish.uid)}> - </button>
+				<label>
+					Dish Name
+					<input type="text" bind:value={dish.name} placeholder="Unnamed Dish" />
+				</label>
+				<label>
+					Dish Price
+					<input type="number" bind:value={dish.amount} step="0.01" min="0" />
+				</label>
+				<button on:click={removeDish(item.name, dish.uid)}> Remove </button>
 			{/each}
 			<button on:click={addDish(item.name)}>Add dish</button>
 		</div>
@@ -147,12 +182,11 @@
 		border: 1px solid;
 		margin-block: 1em;
 		padding: 1em;
-
 	}
 
 	#displayTable {
 		inline-size: 100%;
-		text-align: start;
+		text-align: center;
 		margin-block-end: 1em;
 	}
 </style>
