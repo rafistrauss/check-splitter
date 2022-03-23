@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Svelte demo app" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/check-split/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/check-split/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/check-split/favicon-16x16.png">
+		<link rel="manifest" href="/check-split/manifest.json">
+		<link rel="mask-icon" href="/check-split/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#603cba">
+		<meta name="theme-color" content="#ffffff">
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="stylesheet" href="/check-split/_app/assets/pages/__layout.svelte-a66fd1a1.css">
+	<link rel="stylesheet" href="/check-split/_app/assets/pages/index.svelte-d5c4df9c.css">
+	<link rel="modulepreload" href="/check-split/_app/start-49f2dc39.js">
+	<link rel="modulepreload" href="/check-split/_app/chunks/vendor-b755ecce.js">
+	<link rel="modulepreload" href="/check-split/_app/pages/__layout.svelte-f7df85c0.js">
+	<link rel="modulepreload" href="/check-split/_app/pages/index.svelte-c0022953.js">
+				<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/check-split/service-worker.js');
+		}
+	</script>
+	</head>
+	<body>
+		<div>
+
+
+<main class="svelte-18b9ok"><details open class="svelte-3ubam7"><summary style="cursor: pointer;">Instructions
+		</summary>
+		<p>This (basic) webapp lets you calculate how much each member of your party should pay, tax &amp; tip included, based on what they ordered.
+		</p>
+		<ul><li>Add each member of your party</li>
+			<li>Add what dishes each member ordered</li>
+			<li>Choose a tip amount</li></ul></details>
+
+<section class="svelte-3ubam7"><table id="displayTable" class="svelte-3ubam7"><thead><tr><th>Name</th>
+				<th>Order Cost</th>
+				<th>Tip</th>
+				<th>Tax</th>
+				<th>Total</th></tr></thead>
+		<tbody></tbody></table></section>
+<div style="margin-block-end: 1em;">Tip: <input type="number" min="0" step="1" style="inline-size: 2em;" value="20">%
+</div>
+<div style="margin-block-end: 1em;">Tax: <input type="number" min="0" step="0.01" style="inline-size: 4em;" value="8.875">%
+</div>
+
+<div><button>Add Person</button></div>
+
+
+</main>
+
+
+		<script type="module" data-hydrate="aw6f53">
+		import { start } from "/check-split/_app/start-49f2dc39.js";
+		start({
+			target: document.querySelector('[data-hydrate="aw6f53"]').parentNode,
+			paths: {"base":"/check-split","assets":"/check-split"},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/check-split/_app/pages/__layout.svelte-f7df85c0.js"),
+						import("/check-split/_app/pages/index.svelte-c0022953.js")
+				],
+				url: new URL("http://sveltekit-prerender/check-split"),
+				params: {}
+			}
+		});
+	</script></div>
+	</body>
+</html>
